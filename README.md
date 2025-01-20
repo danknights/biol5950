@@ -1,4 +1,4 @@
-![Course logo](media/logo.png?raw=true)
+![Course logo](logo.png?raw=true)
 # BIOL 5950 AI and Biology
 Helpful scripts and links for BIOL 5950 AI and Biology.
 
