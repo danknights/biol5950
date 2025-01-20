@@ -1,4 +1,6 @@
-![Course logo](logo.png?raw=true)
+<div align="center">
+    <img src="logo.png?raw=true" width="400px"</img> 
+</div>
 # BIOL 5950 AI and Biology
 Helpful scripts and links for BIOL 5950 AI and Biology.
 
