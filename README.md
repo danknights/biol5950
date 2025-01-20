@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="logo.png?raw=true" width="400px"</img> 
+    <img src="logo.png?raw=true" width="300px"</img> 
 </div>
 # BIOL 5950 AI and Biology
 Helpful scripts and links for BIOL 5950 AI and Biology.
