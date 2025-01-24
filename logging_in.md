@@ -5,16 +5,17 @@ To connect to an MSI supercomputer, please follow these steps:
 * You will have received an email invitation to accept the user agreement.
   
 ### Connect to MSI login node:
-* You can SSH to MSI from a terminal with `ssh username@login.msi.umn.edu`
-* Alternatively, you can do this using "Open On Demand":
+* You can connect using "Open On Demand" in your web browser:
     * Control-click (Windows) or Command-click (Mac) here to open the MSI OnDemand dashboard in a new tab: [https://ood.msi.umn.edu](https://ood.msi.umn.edu)
     * Click Clusters > Agate Shell Access to open a terminal with command-line access to a login node.
     * Click Files > Home Directory to view your files
+        * One cool aspect of "Open On Demand" is that you can easily upload/download files by dragging and dropping without needing a separate FTP client.
+* Alternatively, if you are comfortable with the command line, you can SSH to MSI from a terminal with `ssh username@login.msi.umn.edu`
 
-### Switch to the CSCI 5481 "group" _if_ you also have another group
+### Switch to the BIOL 5950 "group" _if_ you also have another group
 If you are in a lab group or another class group, you can run this to switch to our class group account:
 ```bash
-newgrp csci5481
+newgrp biol5950
 ```
 
 You can check if you're in other groups with this:
