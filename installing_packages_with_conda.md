@@ -6,33 +6,38 @@ for the installation step and for creating environments.
 
 This tutorial shows how to install a package using these tools.
 
-## Load the _conda_ module
+### Load the _conda_ module
 You have to do this every time you log in to MSI and want to use conda.
 ```bash
 module load conda
 ```
 
-## Initialize _conda_ (first time only)
+### Initialize _conda_ (first time only)
 On MSI you may have to initialize _conda_ one time before you start using it. Run this command:
 ```bash
 conda init
 ```
 Now exit MSI completely and log back in.
 
-## Create a new _conda_ environment
+### Create a new _conda_ environment
 It is good practice to create a new _conda_ environment to install your software. This
 way the installations won't mess up anything in your normal log-in environment.
 ```bash
 mamba create -n aibio
 ```
 
-## Activate the new environment
+### List your conda environments
+In case you forget what they are called
+```bash
+conda info --envs
+```
+### Activate the new environment
 You will have to do this every time you log in and want to use this environment. 
 ```bash
 conda activate aibio
 ```
 
-## Install a package
+### Install a package
 We will install the _roary_ package for pangenome analysis. Not all packages can be installed with _conda_/_mamba_, 
 but a quick internet search for "install roary with conda" gives me this command: `conda install bioconda::roary`. 
 We will use _mamba_ instead of _conda_.
@@ -43,12 +48,12 @@ many common packages.
 install bioconda::roary -c conda-forge
 ```
 
-## Test the installation
+### Test the installation
 ```bash
 roary --version
 ```
 
-## Exit the conda environment when done
+### Exit the conda environment when done
 ```bash
 conda deactivate
 ```
