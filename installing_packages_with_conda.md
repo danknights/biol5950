@@ -6,6 +6,12 @@ for the installation step and for creating environments.
 
 This tutorial shows how to install a package using these tools.
 
+## Load the _conda_ module
+You have to do this every time you log in to MSI and want to use conda.
+```bash
+module load conda
+```
+
 ## Initialize _conda_ (first time only)
 On MSI you may have to initialize _conda_ one time before you start using it. Run this command:
 ```bash
