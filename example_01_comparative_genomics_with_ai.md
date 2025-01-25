@@ -51,7 +51,7 @@ Then I continued with the exercise:
 
 > Prompt:
 > 
-> OK I have the file ncbi_dataset.zip on MSI. What's next?
+> OK I have the file ncbi_dataset.zip on MSI, the supercomputer at UMN. What's next?
 
 Results: At this point, the entire analysis proceeded according to chatgpt's instructions!
 Every time I ran something, it prompted me to paste the output into the chat.
