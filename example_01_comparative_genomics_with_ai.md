@@ -21,7 +21,9 @@ Results: chatgpt gave me a link. I followed the link and searched for Escherichi
 > Sequence report (JSONL)
 > What should I select?
 
-Results: I selected FASTA, GFF. I downloaded the files to my local computer and transfered the file, `ncbi_dataset.zip` to my `biol5950` folder on MSI using [ood.msi.umn.edu](ood.msi.umn.edu).
+Results: After some discussion, I selected FASTA, GFF. 
+
+This part I did on my own: I downloaded the NCBI files to my local computer and transfered the file, `ncbi_dataset.zip` to my `biol5950` folder on MSI using [ood.msi.umn.edu](ood.msi.umn.edu).
 
 Now -- and this is made all the difference -- I told chatgpt to hold my hand.
 
