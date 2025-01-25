@@ -53,6 +53,17 @@ install bioconda::roary -c conda-forge
 roary --version
 ```
 
+### Alternative installation with `pip`
+Many bioinformatics tools can be installed with mamba/conda, but there is an even easier method for 
+common scientifice python packages. For example, _pip_ can install _pandas_ (used for using data tables in _python_),
+or _numpy_ (for arrays and matrices in _python_).
+You can always try pip first to see if a package is available there:
+```bash
+pip install pandas
+```
+
+However, it is still a good idea to create and activate a _conda_ environment before installing something with 
+_pip_, so that you don't overwrite anything important in your base python environment.
 ### Exit the conda environment when done
 ```bash
 conda deactivate
