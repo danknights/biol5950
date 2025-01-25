@@ -3,7 +3,7 @@ This could be a list of commands to run in order to do comparative genomics; ins
 
 > Prompt:
 > 
-> I want to do pangenome analysis on e coli. How do I download some e coli genomes from NCBI?
+> I want to do pangenome analysis on e coli. How do I download some e coli genomes manually from the NCBI website?
 
 Results: chatgpt gave me a link. I followed the link and searched for Escherichia coli. 
 
