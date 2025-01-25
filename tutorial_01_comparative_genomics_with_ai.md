@@ -1,4 +1,4 @@
-# Tutorial 01: Comparative Genomics with AI
+# Example 1: Comparative Genomics with AI
 This could be a list of commands to run in order to do comparative genomics; instead, it is a list of _prompts_ to ask AI! These are just suggestions, but they worked on ChatGPT 4o on Jan 24, 2025.
 
 **Prompt:**
