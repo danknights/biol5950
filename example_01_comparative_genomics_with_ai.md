@@ -32,19 +32,24 @@ Now -- and this is made all the difference -- I told chatgpt to hold my hand.
 > For the rest of this conversation, I need you to really hold my hand and walk
 > me through the basics. This means:
 > 
-> 1. Only give me one step to do at a time.
-> 2. Before each step, help me check the input files to make sure they are in
+> &nbsp;1. Only give me one step to do at a time.
+> 
+> &nbsp;2. Before each step, help me check the input files to make sure they are in
 >    the right places and have the right filenames. Tell me how to check and
 >    I will paste the info here so that you can see it too. Please do not
 >    assume that the files are exactly where you think think they are
 >    or that they are named exactly like you think.
-> 3. If we need to move or rename the files, walk me through the basic steps
+>
+> &nbsp;3. If we need to move or rename the files, walk me through the basic steps
 >    because I am a beginner on the command line.
-> 4. Then give me the command to run, based on the locations and names of the
+>
+> &nbsp;4. Then give me the command to run, based on the locations and names of the
 >    input files that we found together.
-> 5. Then after I run the command, remind me to paste the output here so that
+>
+> &nbsp;5. Then after I run the command, remind me to paste the output here so that
 >    you can make sure it ran as expected and so that you can spot any errors.
-> 6. After we have confirmed that a step worked correctly, you can move on to
+>
+> &nbsp;6. After we have confirmed that a step worked correctly, you can move on to
 >    the next step.
 
 Then I continued with the exercise:
@@ -56,9 +61,15 @@ Then I continued with the exercise:
 Results: At this point, the entire analysis proceeded according to chatgpt's instructions!
 Every time I ran something, it prompted me to paste the output into the chat.
 
-There were a few errors, but it helped me resolve them, as follows. 
+You might need to spur it along with a prompt like this:
 
-It required the software `roary` for pan-genome analysis, which was missing from MSI.
+> Prompt:
+>
+> let's do pangenome analysis. What is a common and easy tool?
+
+Throughout the procees, there were a few errors, and it helped me resolve them. 
+
+For example, it required the software `roary` for pan-genome analysis, which was missing from MSI.
 Chatgpt told me how to install it with _conda_, but I used _mamba_ for the install
 process as described in the tutorial on [installing packages](installing_packages_with_conda.md).
 
