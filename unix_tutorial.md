@@ -1,5 +1,5 @@
 
-# UNIX Command-line Guide
+# UNIX Command-line Cheatsheet
 
 These are some of the more commonly used UNIX commands.
 
