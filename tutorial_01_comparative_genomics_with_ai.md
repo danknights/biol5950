@@ -1,12 +1,14 @@
 # Tutorial 01: Comparative Genomics with AI
-This could be a list of commands to run to do comparative genomics; instead, it is a list of _prompts_ to ask AI! These are just suggestions, but they worked on ChatGPT 4o on Jan 24, 2025.
+This could be a list of commands to run in order to do comparative genomics; instead, it is a list of _prompts_ to ask AI! These are just suggestions, but they worked on ChatGPT 4o on Jan 24, 2025.
 
-## Obtain data
-> I want to do pangenome analysis on e coli. How do I download some e coli genomes from NCBI?
+**Prompt:**
+> I want to do pangenome analysis on e coli. How do I download some e coli genomes from NCBI?_
 
+**Result:**
 Chat-GPT gave me a link. I followed the link and searched for Escherichia coli. 
 
-> OK I selected 10 genomes, clicked Download > Download package, and it gave me these options:
+**Prompt:**
+> OK I selected 5 genomes, clicked Download > Download package, and it gave me these options:
 > 
 > Genome sequences (FASTA)
 > Annotation features (GTF)
@@ -18,9 +20,10 @@ Chat-GPT gave me a link. I followed the link and searched for Escherichia coli.
 > Sequence report (JSONL)
 > What should I select?
 
-Note: I selected FASTA, GFF. I downloaded the files to my local computer and transfered the file, `ncbi_dataset.zip` to my `biol5950` folder on MSI using [ood.msi.umn.edu](ood.msi.umn.edu).
+**Result:**
+I selected FASTA, GFF. I downloaded the files to my local computer and transfered the file, `ncbi_dataset.zip` to my `biol5950` folder on MSI using [ood.msi.umn.edu](ood.msi.umn.edu).
 
-## Tell the AI to hold your hand
+**Prompt:**
 > For the rest of this conversation, I need you to really hold my hand and walk
 > me through the basics. This means:
 > 
@@ -40,9 +43,10 @@ Note: I selected FASTA, GFF. I downloaded the files to my local computer and tra
 >    the next step.
  
 
-## Continue to follow AI's instructions.
+**Prompt:**
 > OK I have the file ncbi_dataset.zip on MSI. What's next?
 
+**Result:**
 At this point, the entire analysis proceeded according to ChatGPT's instructions!
 
 There were a few errors, but it helped me resolve them, as follows. 
@@ -56,4 +60,12 @@ Then when _roary_ had an error, it told me to install _prokka_, which I did the 
 Then _prokka_ had an error (because the _blastp_ version was too old), and I could have installed
 _blast_, but I knew that MSI has _blast_, so I searched for it [as described here](loading_modules.md),
 and loaded a newer version with `module load ncbi_blast/2.8.1`.
+
+Once the _prokka_ and _roary_ analyses were done, I used itree2 to make a phylogeny from the core
+gene alignment. I transferred all files back to my laptop. I uploaded the tree to the Interactive
+Tree of Life (https://itol.embl.de/). I then had ChatGPT write a python script to generate an
+annotation file for iTOL to show core vs. accessory vs. unique genes for each strain using a 
+barchart on the tree (its idea). 
+
+<img width="855" alt="image" src="https://github.com/user-attachments/assets/6849bf5a-278d-4b7a-8a21-03d94bc51c01" />
 
