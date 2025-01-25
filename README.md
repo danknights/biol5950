@@ -6,7 +6,7 @@
 Helpful scripts and links for BIOL 5950 AI and Biology.
 
 ## Fundamentals
-* [UNIX/command-line commands tutorial](unix.md)
+* [UNIX/command-line commands tutorial](unix_cheatsheet.md)
 * [Logging in to MSI](logging_in.md)
 * [Listing and loading modules](loading_modules.md)
 * [Installing missing packages](installing_packages_with_conda.md)
