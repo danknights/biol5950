@@ -42,9 +42,9 @@ install bioconda::roary -c conda-forge
 roary --version
 ```
 
-This is a very powerful process that can install otherwise tricky tools. For example, this same process can be used to install the _prokka_ genome annotation pipeline tool, which is missing from MSI.
-
 ## Exit the conda environment when done
 ```bash
 conda deactivate
 ```
+
+This is a very powerful process that can install otherwise tricky tools. For example, this same process can be used to install the _prokka_ genome annotation pipeline tool, which is missing from MSI.
