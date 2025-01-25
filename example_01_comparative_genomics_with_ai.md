@@ -23,6 +23,8 @@ Results: chatgpt gave me a link. I followed the link and searched for Escherichi
 
 Results: I selected FASTA, GFF. I downloaded the files to my local computer and transfered the file, `ncbi_dataset.zip` to my `biol5950` folder on MSI using [ood.msi.umn.edu](ood.msi.umn.edu).
 
+Now -- and this is made all the difference -- I told chatgpt to hold my hand.
+
 > Prompt:
 >
 > For the rest of this conversation, I need you to really hold my hand and walk
@@ -42,10 +44,11 @@ Results: I selected FASTA, GFF. I downloaded the files to my local computer and 
 >    you can make sure it ran as expected and so that you can spot any errors.
 > 6. After we have confirmed that a step worked correctly, you can move on to
 >    the next step.
- 
+
+Then I continued with the exercise:
 
 > Prompt:
->
+> 
 > OK I have the file ncbi_dataset.zip on MSI. What's next?
 
 Results: At this point, the entire analysis proceeded according to chatgpt's instructions!
@@ -53,13 +56,14 @@ Every time I ran something, it prompted me to paste the output into the chat.
 
 There were a few errors, but it helped me resolve them, as follows. 
 
-It required the software _roary_ for pan-genome analysis, which was missing from MSI.
+It required the software `roary` for pan-genome analysis, which was missing from MSI.
 Chatgpt told me how to install it with _conda_, but I used _mamba_ for the install
 process as described in the tutorial on [installing packages](installing_packages_with_conda.md).
 
-Then when _roary_ had an error, it told me to install _prokka_, which I did the same way.
+Then when `roary` had an error, it told me to install and run `prokka`, which I did the same way.
 
-When _roary_ was finished, chatgpt suggested that I make a phylogeny with _iqtree_.
+When `prokka` and `roary` were finished (about 10 minutes total), chatgpt
+suggested that I make a phylogeny with _iqtree_.
 I found the _iqtree2_ module already on MSI and made the tree.
 
 > Prompt:
@@ -83,84 +87,90 @@ Results: This was actually the hardest step because it made two mistakes in the 
 fixed easily (based on the error from iTOL). For the other one, I had to bring out the big guns: chatgpt o1.
 This is the prompt that I used. Note the use of --------------------------- to separate content.
 
-> Prompt (for chatgpt o1):
-> I have pangenome output from roary called gene_presence_absence.csv. The first few lines look like this:
->
-> -----------------------------
-> "Gene","Non-unique Gene name","Annotation","No. isolates","No. sequences","Avg sequences per isolate","Genome Fragment","Order within Fragment","Accessory Fragment","Accessory Order with 
-> Fragment","QC","Min group size nuc","Max group size nuc","Avg group size nuc","GCF_000005845.2","GCF_000008865.2","GCF_000013265.1","GCF_002853715.1","GCF_003697165.2"
-> "hemA","","Glutamyl-tRNA reductase","5","5","1","2","7870","","","","1256","1325","1283","PICPPNBC_01206","LIHDBMIF_01680","PKBHPNHA_01287","DHKDBCCC_02678","BFLNMBHB_02675"
-> "group_1001","","Invasin","5","5","1","2","7882","","","","1394","1430","1408","PICPPNBC_01219","LIHDBMIF_01692","PKBHPNHA_01298","DHKDBCCC_02667","BFLNMBHB_02664"
-> -----------------------------
-> 
-> I'm using this python script to generate an annotation file for iTOL:
-> 
-> -----------------------------
-> import pandas as pd
-> 
-> # Load the gene_presence_absence.csv file
->  input_file = "gene_presence_absence.csv"
-> output_file = "itol_core_accessory_unique.txt"
-> 
-> # Read the CSV file (skip the first line with non-standard header information)
-> df = pd.read_csv(input_file, skiprows=1)
-> 
-> # Extract genome names from the column headers (starting from column 14)
-> genomes = df.columns[14:]  # Extract columns with genome presence/absence data
-> 
-> # Initialize counts for each genome (use GCF IDs directly)
-> gene_counts = {genome: {"core": 0, "accessory": 0, "unique": 0} for genome in genomes}
-> 
-> # Iterate over rows and classify genes
-> for _, row in df.iterrows():
->     presence_absence = row[14:]  # Presence/absence data for genomes
->     present_in = presence_absence.notna().sum()
-> 
->     # Classify gene
->     if present_in == len(genomes):
->         for genome in genomes:
->             gene_counts[genome]["core"] += 1
->     elif present_in == 1:
->         genome = presence_absence.notna().idxmax()  # Find genome where the gene is unique
->         gene_counts[genome]["unique"] += 1
->     else:
->         for genome in presence_absence[presence_absence.notna()].index:
->             gene_counts[genome]["accessory"] += 1
-> 
-> # Write iTOL metadata file
-> with open(output_file, "w") as f:
->     f.write("DATASET_MULTIBAR\n")
->     f.write("SEPARATOR TAB\n")
->     f.write("DATASET_LABEL\tCore/Accessory/Unique\n")
->     f.write("FIELD_COLORS\t#FF0000\t#00FF00\t#0000FF\n")  # Red: Core, Green: Accessory, Blue: Unique
->     f.write("FIELD_LABELS\tCore\tAccessory\tUnique\n")
->     f.write("DATA\n")
-> 
->     for genome, counts in gene_counts.items():
->         f.write(f"{genome}\t{counts['core']}\t{counts['accessory']}\t{counts['unique']}\n")
-> 
-> print(f"iTOL metadata written to {output_file}")
-> -----------------------------
-> 
-> But the output looks like this, with the wrong genome IDs:
-> 
-> -----------------------------
-> DATASET_MULTIBAR
-> SEPARATOR TAB
-> DATASET_LABEL	Core/Accessory/Unique
-> FIELD_COLORS	#FF0000	#00FF00	#0000FF
-> FIELD_LABELS	Core	Accessory	Unique
-> DATA
-> PICPPNBC_01219	3278	622	404
-> LIHDBMIF_01692	3278	692	1402
-> PKBHPNHA_01298	3278	1138	413
-> DHKDBCCC_02667	3278	949	629
-> BFLNMBHB_02664	3278	1266	163
-> -----------------------------
-> 
-> Please help me fix it.
+<div>
+<blockquote>
+Prompt (for chatgpt o1):
+<br>I have pangenome output from roary called gene_presence_absence.csv. The first few lines look like this:
+
+\-----------------------------
+<br>"Gene","Non-unique Gene name","Annotation","No. isolates","No. sequences","Avg sequences per isolate","Genome Fragment","Order within Fragment","Accessory Fragment","Accessory Order with 
+Fragment","QC","Min group size nuc","Max group size nuc","Avg group size nuc","GCF_000005845.2","GCF_000008865.2","GCF_000013265.1","GCF_002853715.1","GCF_003697165.2"
+<br>"hemA","","Glutamyl-tRNA reductase","5","5","1","2","7870","","","","1256","1325","1283","PICPPNBC_01206","LIHDBMIF_01680","PKBHPNHA_01287","DHKDBCCC_02678","BFLNMBHB_02675"
+"group_1001","","Invasin","5","5","1","2","7882","","","","1394","1430","1408","PICPPNBC_01219","LIHDBMIF_01692","PKBHPNHA_01298","DHKDBCCC_02667","BFLNMBHB_02664"
+<br>\-----------------------------
+
+I'm using this python script to generate an annotation file for iTOL:
+
+\-----------------------------
+import pandas as pd
+
+\# Load the gene_presence_absence.csv file
+<br>input_file = "gene_presence_absence.csv"
+<br>output_file = "itol_core_accessory_unique.txt"
+
+\# Read the CSV file (skip the first line with non-standard header information)
+<br>df = pd.read_csv(input_file, skiprows=1)
+
+\# Extract genome names from the column headers (starting from column 14)
+<br>genomes = df.columns[14:]  # Extract columns with genome presence/absence data
+
+\# Initialize counts for each genome (use GCF IDs directly)
+<br>gene_counts = {genome: {"core": 0, "accessory": 0, "unique": 0} for genome in genomes}
+
+\# Iterate over rows and classify genes
+<br>for _, row in df.iterrows():
+<br>&nbsp;&nbsp;&nbsp;&nbsp;presence_absence = row[14:]  # Presence/absence data for genomes
+<br>&nbsp;&nbsp;&nbsp;&nbsp;present_in = presence_absence.notna().sum()
+
+&nbsp;&nbsp;&nbsp;&nbsp;\# Classify gene
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if present_in == len(genomes):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for genome in genomes:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gene_counts[genome]["core"] += 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;elif present_in == 1:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;genome = presence_absence.notna().idxmax()  # Find genome where the gene is unique
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gene_counts[genome]["unique"] += 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for genome in presence_absence[presence_absence.notna()].index:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gene_counts[genome]["accessory"] += 1
+
+\# Write iTOL metadata file
+<br>with open(output_file, "w") as f:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("DATASET_MULTIBAR\n")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("SEPARATOR TAB\n")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("DATASET_LABEL\tCore/Accessory/Unique\n")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("FIELD_COLORS\t#FF0000\t#00FF00\t#0000FF\n")  # Red: Core, Green: Accessory, Blue: Unique
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("FIELD_LABELS\tCore\tAccessory\tUnique\n")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f.write("DATA\n")
+
+&nbsp;&nbsp;&nbsp;&nbsp;for genome, counts in gene_counts.items():
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(f"{genome}\t{counts['core']}\t{counts['accessory']}\t{counts['unique']}\n")
+
+print(f"iTOL metadata written to {output_file}")
+<br>\-----------------------------
+
+But the output looks like this, with the wrong genome IDs:> 
+<br>\-----------------------------
+<br>DATASET_MULTIBAR
+<br>SEPARATOR TAB
+<br>DATASET_LABEL	Core/Accessory/Unique
+<br>FIELD_COLORS	#FF0000	#00FF00	#0000FF
+<br>FIELD_LABELS	Core	Accessory	Unique
+<br>DATA
+<br>PICPPNBC_01219	3278	622	404
+<br>LIHDBMIF_01692	3278	692	1402
+<br>PKBHPNHA_01298	3278	1138	413
+<br>DHKDBCCC_02667	3278	949	629
+<br>BFLNMBHB_02664	3278	1266	163
+<br>\-----------------------------
+
+Please help me fix it.
+</blockquote>
+</div>
+
 
 Chatgpt o1 took 45 seconds to think and fixed the problem immediately.
+
+I uploaded the annotation file to iTOL, manually changed the barchart colors, and got this:
 
 <img width="855" alt="image" src="https://github.com/user-attachments/assets/6849bf5a-278d-4b7a-8a21-03d94bc51c01" />
 
