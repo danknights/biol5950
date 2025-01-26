@@ -17,7 +17,8 @@ module avail spades
 module load spades/3.15.5
 ```
 
-### Load the "python" module to use python scripts (like "spades")
+### Optional: load the "python" module
+Sometimes this is necessary to use certain software modules like Spades:
 ```bash
 module load python
 ```
