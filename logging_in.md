@@ -1,31 +1,32 @@
 # Logging in to MSI
 To connect to an MSI supercomputer, please follow these steps:
 
-### Accept the MSI User Agreement
-* You will have received an email invitation to accept the user agreement.
+### Accept the MSI User Agreement (if you have not already done so)
+* You may have received an email invitation to accept the user agreement
 * You can also fill it out here: [https://www.msi.umn.edu/user-agreement](https://www-archive.msi.umn.edu/user-agreement).
   
 ### Connect to MSI login node:
-* You can connect using "Open On Demand" in your web browser:
+* Connect using "Open On Demand" in your web browser:
     * Control-click (Windows) or Command-click (Mac) here to open the MSI OnDemand dashboard in a new tab: [https://ood.msi.umn.edu](https://ood.msi.umn.edu)
-    * Click Clusters > Agate Shell Access to open a terminal with command-line access to a login node.
     * Click Files > Home Directory to view your files
         * One cool aspect of "Open On Demand" is that you can easily upload/download files by dragging and dropping without needing a separate FTP client.
+    * Click Clusters > Agate Shell Access to open a terminal with command-line access to a login node.
 * Alternatively, if you are comfortable with the command line, you can SSH to MSI from a terminal with `ssh username@login.msi.umn.edu`
 
 ### Switch to the BIOL 5950 "group" _if_ you also have another group
-If you are in a lab group or another class group, you can run this to switch to our class group account:
+If you are in a lab group or another class group, you can run this to switch to our class group account. 
+Do this every time you log in.
 ```bash
 newgrp biol5950
 ```
 
-You can check if you're in other groups with this:
+Note: you can check if you're in other groups with this:
 ```bash
 groups
 ```
 
 ### Launch and connect to an interactive computing node
-- When you first log in to MSI, you will be on a "login" node. You are not allowed to run computations on this node. Instead, you can launch an interactive node for running computations with this command:
+When you first log in to MSI, you will be on a "login" node. You are not able to run long computations on this node. Instead, you can launch an interactive node for running computations with this command:
 
  ```bash
 # Note: --ntasks-per-node is the number of cores you want
