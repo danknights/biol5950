@@ -17,15 +17,15 @@ module avail spades
 module load spades/3.15.5
 ```
 
-### Optional: load the "python" module
-Sometimes this is necessary to use certain software modules like Spades:
-```bash
-module load python
-```
-
 ### Run `spades.py`
 ```bash
 spades.py --version
+```
+
+### Optional: load the "python" module
+If `spades.py` did not run, it may be necessary to load the `python` module and then run `spades.py` again.
+```bash
+module load python
 ```
 
 Note: modules are not loaded automatically when you log in. If you need a particular module, you have to load it every time you log in.
