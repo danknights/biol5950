@@ -3,6 +3,7 @@ To connect to an MSI supercomputer, please follow these steps:
 
 ### Accept the MSI User Agreement
 * You will have received an email invitation to accept the user agreement.
+* You can also fill it out here: [https://www.msi.umn.edu/user-agreement](https://www-archive.msi.umn.edu/user-agreement).
   
 ### Connect to MSI login node:
 * You can connect using "Open On Demand" in your web browser:
@@ -41,6 +42,18 @@ Note: if this fails to connect, please try logging back in and running this inst
 srun -N 1 --ntasks-per-node=4 --mem-per-cpu=4gb -t 02:00:00 -p interactive --pty bash
  ```
 
+### Create a new folder in your home folder (the very first time only!)
+This will be a place to store all of your work in the class. You only need to create this folder once at the start of the semester.
+```bash
+# Do this only the very first time you log in!
+mkdir biol5950
+```
+
+### Enter the course folder that you created
+You will do this every time you log in.
+```bash
+cd biol5950
+```
+
 ### Troubleshooting
-  * If you have trouble connecting, try filling out the MSI user agreement here: https://www.msi.umn.edu/user-agreement.
-  * Make sure you are on campus, connected to the the UofM network or eduroam network. Otherwise, MSI will block your computer from connecting. To get around this, you can also use a [University of Minnesota VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn). 
+  * If you cannot connect to ood.msi.umn.edu or cannot SSH from a terminal, make sure you are on campus, connected to the the UofM network or eduroam network. Otherwise, MSI will block your computer from connecting. To work from home, you can use a [University of Minnesota VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn). 
