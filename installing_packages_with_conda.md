@@ -45,7 +45,7 @@ We will use _mamba_ instead of _conda_.
 Note: it's often necessary to include the "conda-forge" channel when installing packages. This is a collection of
 many common packages. This may take about 5 minutes.
 ```bash
-install bioconda::roary -c conda-forge
+mamba install bioconda::roary -c conda-forge
 ```
 
 ### Test the installation
