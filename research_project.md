@@ -3,41 +3,40 @@ The following are links to frequently used online sources of public genomic data
 
 ## Types of data
 The project involves obtaining some type of biological data to analyze. This could be anything (not just genomic data). Here are some examples:
-<ul>
-Genomic Data: This includes DNA sequences, gene annotations, and information about genetic variations such as single nucleotide polymorphisms (SNPs) and copy number variations (CNVs).
 
-Transcriptomic Data: This type of data involves RNA sequences, gene expression levels, and information about alternative splicing events.
+* Genomic Data: This includes DNA sequences, gene annotations, and information about genetic variations such as single nucleotide polymorphisms (SNPs) and copy number variations (CNVs).
 
-Proteomic Data: This includes data on protein sequences, protein structures, protein-protein interactions, and post-translational modifications.
+* Transcriptomic Data: This type of data involves RNA sequences, gene expression levels, and information about alternative splicing events.
 
-Metabolomic Data: This involves data on the small molecules or metabolites within a cell, tissue, or organism, including their concentrations and fluxes.
+* Proteomic Data: This includes data on protein sequences, protein structures, protein-protein interactions, and post-translational modifications.
 
-Epigenomic Data: This includes data on DNA methylation patterns, histone modifications, and chromatin accessibility.
+* Metabolomic Data: This involves data on the small molecules or metabolites within a cell, tissue, or organism, including their concentrations and fluxes.
 
-Phenotypic Data: This type of data involves observable characteristics or traits of organisms, such as morphology, development, biochemical properties, and behavior.
+* Epigenomic Data: This includes data on DNA methylation patterns, histone modifications, and chromatin accessibility.
 
-Clinical Data: This includes patient data such as medical histories, laboratory test results, imaging data, and treatment outcomes.
+* Phenotypic Data: This type of data involves observable characteristics or traits of organisms, such as morphology, development, biochemical properties, and behavior.
 
-Microbiome Data: This involves data on the communities of microorganisms living in a particular environment, such as the human gut, and their genetic material.
+* Clinical Data: This includes patient data such as medical histories, laboratory test results, imaging data, and treatment outcomes.
 
-Ecological Data: This includes data on species distributions, population sizes, biodiversity, and ecosystem dynamics.
+* Microbiome Data: This involves data on the communities of microorganisms living in a particular environment, such as the human gut, and their genetic material.
 
-Phylogenetic Data: This involves data used to study the evolutionary relationships among species, including molecular sequences and morphological traits.
+* Ecological Data: This includes data on species distributions, population sizes, biodiversity, and ecosystem dynamics.
 
-Structural Data: This includes data on the three-dimensional structures of biological macromolecules such as proteins and nucleic acids.
+* Phylogenetic Data: This involves data used to study the evolutionary relationships among species, including molecular sequences and morphological traits.
 
-Imaging Data: This involves data from various imaging techniques such as microscopy, MRI, CT scans, and ultrasound.
+* Structural Data: This includes data on the three-dimensional structures of biological macromolecules such as proteins and nucleic acids.
 
-Flow Cytometry Data: This includes data on the physical and chemical characteristics of cells or particles as they flow through a laser beam.
+* Imaging Data: This involves data from various imaging techniques such as microscopy, MRI, CT scans, and ultrasound.
 
-High-Throughput Screening Data: This involves data from experiments that quickly assay the biological activity of a large number of compounds or genetic constructs.
+* Flow Cytometry Data: This includes data on the physical and chemical characteristics of cells or particles as they flow through a laser beam.
 
-Biochemical Data: This includes data on enzyme kinetics, metabolic pathways, and biochemical reactions.
+* High-Throughput Screening Data: This involves data from experiments that quickly assay the biological activity of a large number of compounds or genetic constructs.
 
-Pharmacogenomic Data: This involves data on how genetic variations affect an individual's response to drugs.
+* Biochemical Data: This includes data on enzyme kinetics, metabolic pathways, and biochemical reactions.
 
-Pathway Data: This includes data on biological pathways, such as metabolic pathways, signaling pathways, and regulatory networks.
-</ul>
+* Pharmacogenomic Data: This involves data on how genetic variations affect an individual's response to drugs.
+
+* Pathway Data: This includes data on biological pathways, such as metabolic pathways, signaling pathways, and regulatory networks.
 
 ## Data sources
 The following are some examples of labeled public data; these are a small subset of the types listed above.
