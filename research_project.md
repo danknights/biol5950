@@ -1,7 +1,46 @@
 # Links to data for research project
 The following are links to frequently used online sources of public genomic data. They are organized according to the data type. This list is far from exhaustive; it is merely scratching the surface of what is available online.
-  
+
+## Types of data
+The project involves obtaining some type of biological data to analyze. This could be anything (not just genomic data). Here are some examples:
+<ul>
+Genomic Data: This includes DNA sequences, gene annotations, and information about genetic variations such as single nucleotide polymorphisms (SNPs) and copy number variations (CNVs).
+
+Transcriptomic Data: This type of data involves RNA sequences, gene expression levels, and information about alternative splicing events.
+
+Proteomic Data: This includes data on protein sequences, protein structures, protein-protein interactions, and post-translational modifications.
+
+Metabolomic Data: This involves data on the small molecules or metabolites within a cell, tissue, or organism, including their concentrations and fluxes.
+
+Epigenomic Data: This includes data on DNA methylation patterns, histone modifications, and chromatin accessibility.
+
+Phenotypic Data: This type of data involves observable characteristics or traits of organisms, such as morphology, development, biochemical properties, and behavior.
+
+Clinical Data: This includes patient data such as medical histories, laboratory test results, imaging data, and treatment outcomes.
+
+Microbiome Data: This involves data on the communities of microorganisms living in a particular environment, such as the human gut, and their genetic material.
+
+Ecological Data: This includes data on species distributions, population sizes, biodiversity, and ecosystem dynamics.
+
+Phylogenetic Data: This involves data used to study the evolutionary relationships among species, including molecular sequences and morphological traits.
+
+Structural Data: This includes data on the three-dimensional structures of biological macromolecules such as proteins and nucleic acids.
+
+Imaging Data: This involves data from various imaging techniques such as microscopy, MRI, CT scans, and ultrasound.
+
+Flow Cytometry Data: This includes data on the physical and chemical characteristics of cells or particles as they flow through a laser beam.
+
+High-Throughput Screening Data: This involves data from experiments that quickly assay the biological activity of a large number of compounds or genetic constructs.
+
+Biochemical Data: This includes data on enzyme kinetics, metabolic pathways, and biochemical reactions.
+
+Pharmacogenomic Data: This involves data on how genetic variations affect an individual's response to drugs.
+
+Pathway Data: This includes data on biological pathways, such as metabolic pathways, signaling pathways, and regulatory networks.
+</ul>
+
 ## Data sources
+The following are some examples of labeled public data; these are a small subset of the types listed above.
 
 ### Raw shotgun data for assembly -- Individual genomes
 * You can search the NCBI Sequence Read Archive (SRA) database for a particular organism: https://www.ncbi.nlm.nih.gov/sra. For example, if you search "Salmonella", you will find thousands of shotgun sequencing data sets. You can filter by technology, e.g. Illumina for short-read data. To download the raw sequencing data, click on the data set link, then click the link under "Run" at the bottom of the page, then click "FASTA/FASTQ download" at the top, then select "Filtered", then "FASTA. This will download the raw sequencing file. Note: When the data set is paired-end, even though you get one FASTA file, the forward and reverse reads are interleaved. You could treat them as single-end reads, but assembly will work better if you treat them as paired-end (because the assembler knows the two ends belonged to the same molecule). SPADES automatically can input interleaved DNA with the "--12" flag; see here: https://ablab.github.io/spades/running.html#input-data
