@@ -33,7 +33,7 @@ When you first log in to MSI, you will be on a "login" node. You are not able to
 # and --mem-per-cpu is the RAM _per_ core, multiple these to get total memory
 # -t is the time you want allowed
 # Only request what you need
-srun -N 1 --ntasks-per-node=4 --mem-per-cpu=4gb -t 02:00:00 -p agsmall --pty bash
+srun -N 1 --ntasks-per-node=4 --mem-per-cpu=4gb -t 01:30:00 -p agsmall --pty bash
  ```
 
 This may take a while to finish running. It will log you directly in to the interactive node. Often you can see that this has happened because the start of the line in the terminal will say something like "yourusername@cn0077" or "yourusename@acn001" and it will be different from what it was on the previous line. If in doubt, you can run `hostname` to print out the name of the node. Login nodes usually start with `ahl` or `login` or `ln`. 
