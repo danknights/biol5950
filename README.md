@@ -13,6 +13,7 @@ Helpful scripts and links for BIOL 5950 AI and Biology.
 
 ## Demos 
 * Example: [running comparative genomics analysis with ChatGPT and MSI](example_01_comparative_genomics_with_ai.md)
+* Example: [A Jupyter notebook](neural_network_intro) with code for a simple neural net
 
 ## Other useful tips/tricks
 * [Maintaining your session using `screen`](using_screen.md)
