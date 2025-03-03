@@ -65,9 +65,9 @@ For the rest of this conversation, I need you to really hold my hand and walk me
 6. After we have confirmed that a step worked correctly, you can move on to the next step.
 ```
 
-## Additional Prompts to Guide Your Analysis
+## Prompts to Guide Your Analysis
 
-To further assist you in your analysis, consider using the following general prompts with ChatGPT:
+Consider using the following general prompts with ChatGPT to get started analyzing your data:
 
 1. **Performing Quality Control on Gene Expression Data:**
 
