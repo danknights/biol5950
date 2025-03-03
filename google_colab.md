@@ -43,6 +43,9 @@ In this tutorial, you'll learn how to set up a Google Colab notebook for your bi
 3. **Rename the Notebook:**
    - Click on the default title (e.g., "Untitled") at the top and rename it to `biol5950_demo_analysis`.
 
+4. **Try running code:**
+   - Inside the empty code block at the top where it says "Start coding," enter this code: `print("Hello world!")`. Then type command-return or control-return to execute the code. It should print "Hello world!" underneath the code block. To enter a new code block, you can hover your mouse below the output and click "+ Code".
+
 ## Step 5: Use ChatGPT for Further Analysis
 
 Now that you have your data files uploaded and your Colab notebook set up, you can use ChatGPT to guide you through the subsequent steps, including mounting Google Drive, listing contents, loading files, performing quality control, and visualization.
