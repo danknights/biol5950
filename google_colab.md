@@ -45,6 +45,9 @@ In this tutorial, you'll learn how to set up a Google Colab notebook for your bi
 
 4. **Try running code:**
    - Inside the empty code block at the top where it says "Start coding," enter this code: `print("Hello world!")`. Then type command-return or control-return to execute the code. It should print "Hello world!" underneath the code block. To enter a new code block, you can hover your mouse below the output and click "+ Code".
+  
+5. **Switch to R** (optional)
+   - If you prefer to use R to analyze your data, you can click on Runtime → Change runtime type, and in the Runtime type dropdown, select R instead of Python. However, Rstudio is a good free alternative for running R directly on your computer. 
 
 ## Step 5: Use ChatGPT for Further Analysis
 
