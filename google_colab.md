@@ -72,13 +72,20 @@ To further assist you in your analysis, consider using the following general pro
 1. **Performing Quality Control on Gene Expression Data:**
 
 ```text
-I have a gene expression dataset on my Google Drive. I have two files: GPL14550-9757.txt and GSE229968_processed_data.txt.gz. They are in a folder called biol5950_demo_data on my Google Drive. I also have a new Google colab open to do the analysis. I want to perform quality control to ensure the data's reliability. First, help me access the data in Google colab. Then please guide me through the necessary steps and methods to assess and improve data quality.
+I have a gene expression dataset on my Google Drive.
+I have two files: GPL14550-9757.txt and GSE229968_processed_data.txt.gz.
+They are in a folder called biol5950_demo_data on my Google Drive.
+I also have a new Google colab open to do the analysis.
+I want to perform quality control to ensure the data's reliability.
+First, help me access the data in Google colab.
+Then please guide me through the necessary steps and methods to assess and improve data quality.
 ```
 
 2. **Visualizing Gene Expression Data:**
 
 ```text
-I aim to visualize my gene expression data to identify patterns and insights. Could you suggest effective visualization techniques and guide me on how to implement them?
+I want to visualize my gene expression data to identify patterns and insights.
+Could you suggest effective visualization techniques and guide me on how to implement them?
 ```
 
-With these prompts, ChatGPT will provide you with detailed, step-by-step guidance for analysis in Google Colab.
+With these or similar prompts, ChatGPT should provide you with detailed, step-by-step guidance for analysis in Google Colab.
